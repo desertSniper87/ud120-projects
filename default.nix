@@ -15,12 +15,14 @@ stdenv.mkDerivation rec {
     (python27.buildEnv.override {
       ignoreCollisions = true;
       extraLibs = with python27Packages; [
-        # Add pythonPackages without the prefix
+        pip
+        pip2nix
         scikitlearn
         nltk
         numpy
         scipy
         virtualenv
+        matplotlib
       ];
     })
   ];
